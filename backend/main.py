@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 # Import routers or route functions
-from ai.aiAPI import router as ai_router
-from services.fetchAQI import router as aqi_router
+from backend.ai.aiAPI import router as ai_router
+from backend.services.fetchAQI import router as aqi_router
 
 app = FastAPI(title="PollutionViz API")
 

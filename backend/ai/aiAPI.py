@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Query
-from ai.ai_logic import ask_groq
-from ai.utils import calculate_overall_aqi
+from backend.ai.ai_logic import ask_groq
+from backend.ai.utils import calculate_overall_aqi
 
 router = APIRouter()
 
