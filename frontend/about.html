@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About PollutionViz - Advanced Pollution Visualization Platform</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:"#FF69B4",secondary:'#4CAF50'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+html, body {
+  background: linear-gradient(135deg, #fce7f3 0%, #f3e8ff 50%, #fce7f3 100%);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+:where([class^="ri-"])::before { content: "\f3c2"; }
+
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+0% { opacity: 0.6; }
+50% { opacity: 1; }
+100% { opacity: 0.6; }
+}
+
+.glass-card {
+background: rgba(255, 255, 255, 0.25);
+backdrop-filter: blur(15px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+transition: all 0.3s ease;
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+background: rgba(255, 255, 255, 0.35);
+border-color: rgba(255, 255, 255, 0.4);
+}
+
+.feature-card {
+background: rgba(255, 255, 255, 0.3);
+backdrop-filter: blur(20px);
+border: 1px solid rgba(255, 255, 255, 0.4);
+transition: all 0.3s ease;
+box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+background: rgba(255, 255, 255, 0.4);
+}
+
+html, body {
+    background-color: #02030f;
+    color-scheme: dark;
+}
+
+.btn-hover:hover {
+transform: scale(1.05);
+box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+}
+
+.fade-in {
+animation: fadeIn 1s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1.0s; }
+.delay-6 { animation-delay: 1.2s; }
+
+.logo-text {
+font-weight: 700;
+letter-spacing: -0.02em;
+}
+
+.gradient-text {
+background: linear-gradient(135deg, #FF69B4, #9C27B0, #4CAF50);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.floating-element {
+animation: float 6s ease-in-out infinite;
+}
+
+.sub-feature {
+background: rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.25);
+transition: all 0.2s ease;
+}
+
+.sub-feature:hover {
+background: rgba(255, 255, 255, 0.3);
+transform: translateX(5px);
+}
+</style>
+</head>
+<body class="text-gray-800 overflow-x-hidden">
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center bg-white/20 backdrop-blur-sm border-b border-white/30">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-earth-line text-green-600 ri-xl"></i>
+</div>
+<span class="logo-text text-xl text-gray-800">PollutionViz</span>
+</div>
+<div class="flex items-center space-x-4">
+<a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Home</a>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="pt-24 pb-16 px-6 max-w-6xl mx-auto text-center">
+<div class="fade-in">
+<h1 class="text-4xl md:text-6xl font-bold mb-4 gradient-text leading-tight tracking-tight">
+About PollutionViz
+</h1>
+<p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8 leading-relaxed font-medium">
+India's most advanced pollution visualization platform, combining AR/VR technology, 
+AI-driven insights, and real-time data to make invisible pollution visible and actionable.
+</p>
+</div>
+</section>
+
+<!-- Features Grid -->
+<section class="pb-16 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+<!-- Feature 1: Interactive Pollution Visualization -->
+<div class="feature-card rounded-2xl p-8 fade-in delay-1">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-500/20 rounded-2xl mr-4">
+<i class="ri-global-line ri-2x text-blue-600"></i>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-800 mb-1">Interactive Pollution Visualization</h3>
+<p class="text-blue-600 font-medium">🌍 Real-time India Map Experience</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Live India Map View</h4>
+<p class="text-gray-600 text-sm">Interactive map with real-time AQI overlays and pollution intensity visualization</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Region-wise Heatmap</h4>
+<p class="text-gray-600 text-sm">Color-coded pollution intensity across different regions and cities</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Clickable Zone Exploration</h4>
+<p class="text-gray-600 text-sm">Deep dive into local pollutant data with interactive zone selection</p>
+</div>
+</div>
+</div>
+
+<!-- Feature 2: AR Environment -->
+<div class="feature-card rounded-2xl p-8 fade-in delay-2">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-purple-500/20 rounded-2xl mr-4">
+<i class="ri-camera-3-line ri-2x text-purple-600"></i>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-800 mb-1">AR Environment</h3>
+<p class="text-purple-600 font-medium">📷 Augmented Reality Experience</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Real-time AR Overlays</h4>
+<p class="text-gray-600 text-sm">Live camera feed with augmented reality pollution visualization</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Pollutant Molecules</h4>
+<p class="text-gray-600 text-sm">See invisible pollutant particles floating in your environment</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Educational Tips</h4>
+<p class="text-gray-600 text-sm">Contextual learning as you move through different environments</p>
+</div>
+</div>
+</div>
+
+<!-- Feature 3: AI & ML Modules -->
+<div class="feature-card rounded-2xl p-8 fade-in delay-3 lg:col-span-2">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-green-500/20 rounded-2xl mr-4">
+<i class="ri-brain-line ri-2x text-green-600"></i>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-800 mb-1">AI & ML-Driven Modules</h3>
+<p class="text-green-600 font-medium">💡 Intelligent Pollution Analysis</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="sub-feature rounded-xl p-5">
+<div class="w-10 h-10 flex items-center justify-center bg-red-500/20 rounded-lg mb-3">
+<i class="ri-heart-pulse-line ri-lg text-red-600"></i>
+</div>
+<h4 class="font-semibold text-gray-800 mb-2">🔬 Health Risk Prediction</h4>
+<p class="text-gray-600 text-sm mb-3">ML-powered health risk assessment based on pollutant levels and user factors</p>
+<div class="text-xs text-gray-500">
+<p>• PM2.5, PM10, O₃, CO, NO₂ analysis</p>
+<p>• Low/Moderate/High risk classification</p>
+</div>
+</div>
+<div class="sub-feature rounded-xl p-5">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-500/20 rounded-lg mb-3">
+<i class="ri-robot-line ri-lg text-blue-600"></i>
+</div>
+<h4 class="font-semibold text-gray-800 mb-2">🧠 AI Chatbot</h4>
+<p class="text-gray-600 text-sm mb-3">Intelligent assistant for pollution education and personalized recommendations</p>
+<div class="text-xs text-gray-500">
+<p>• Custom pollution advice</p>
+<p>• Policy information</p>
+</div>
+</div>
+<div class="sub-feature rounded-xl p-5">
+<div class="w-10 h-10 flex items-center justify-center bg-orange-500/20 rounded-lg mb-3">
+<i class="ri-line-chart-line ri-lg text-orange-600"></i>
+</div>
+<h4 class="font-semibold text-gray-800 mb-2">📊 Policy Impact Simulator</h4>
+<p class="text-gray-600 text-sm mb-3">Simulate environmental policy effects using statistical models</p>
+<div class="text-xs text-gray-500">
+<p>• Tree plantation impact</p>
+<p>• Vehicle ban simulations</p>
+</div>
+</div>
+<div class="sub-feature rounded-xl p-5">
+<div class="w-10 h-10 flex items-center justify-center bg-teal-500/20 rounded-lg mb-3">
+<i class="ri-map-pin-line ri-lg text-teal-600"></i>
+</div>
+<h4 class="font-semibold text-gray-800 mb-2">🗂️ Region Classification</h4>
+<p class="text-gray-600 text-sm mb-3">WHO color band classification based on pollution levels</p>
+<div class="text-xs text-gray-500">
+<p>• Green to Maroon bands</p>
+<p>• OpenAQ data integration</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Feature 4: Quest Mode -->
+<div class="feature-card rounded-2xl p-8 fade-in delay-4">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-yellow-500/20 rounded-2xl mr-4">
+<i class="ri-gamepad-line ri-2x text-yellow-600"></i>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-800 mb-1">Quest Mode</h3>
+<p class="text-yellow-600 font-medium">🧭 Gamified Learning for Students</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Interactive Challenges</h4>
+<p class="text-gray-600 text-sm">Gamified learning experience with AR-based pollution quests</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Educational Quizzes</h4>
+<p class="text-gray-600 text-sm">Learn about different pollutants through interactive Q&A sessions</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Clean Air Badges</h4>
+<p class="text-gray-600 text-sm">Collect achievements and badges by completing environmental challenges</p>
+</div>
+</div>
+</div>
+
+<!-- Feature 5: Urban Planner Dashboard -->
+<div class="feature-card rounded-2xl p-8 fade-in delay-5">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-indigo-500/20 rounded-2xl mr-4">
+<i class="ri-dashboard-3-line ri-2x text-indigo-600"></i>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-800 mb-1">Urban Planner Dashboard</h3>
+<p class="text-indigo-600 font-medium">🧑‍💻 Professional Planning Tools</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Data Visualization</h4>
+<p class="text-gray-600 text-sm">Comprehensive graphs, charts, and pollution trend analysis</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Policy Simulation</h4>
+<p class="text-gray-600 text-sm">Test new policies in planning zones before implementation</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Report Generation</h4>
+<p class="text-gray-600 text-sm">Export detailed CSV and PDF reports for stakeholders</p>
+</div>
+</div>
+</div>
+
+<!-- Feature 6: Authentication -->
+<div class="feature-card rounded-2xl p-8 fade-in delay-6">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-pink-500/20 rounded-2xl mr-4">
+<i class="ri-shield-user-line ri-2x text-pink-600"></i>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-800 mb-1">User Profiles & Auth</h3>
+<p class="text-pink-600 font-medium">🔐 Secure User Management</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Firebase Authentication</h4>
+<p class="text-gray-600 text-sm">Secure login and signup with industry-standard authentication</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Personal Preferences</h4>
+<p class="text-gray-600 text-sm">Save user preferences, favorite locations, and custom settings</p>
+</div>
+</div>
+</div>
+
+<!-- Feature 7: Live AQI Feed -->
+<div class="feature-card rounded-2xl p-8 fade-in delay-1">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 flex items-center justify-center bg-cyan-500/20 rounded-2xl mr-4">
+<i class="ri-satellite-line ri-2x text-cyan-600"></i>
+</div>
+<div>
+<h3 class="text-2xl font-bold text-gray-800 mb-1">Live AQI Feed</h3>
+<p class="text-cyan-600 font-medium">🛰️ Real-time Data Integration</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">OpenAQ Integration</h4>
+<p class="text-gray-600 text-sm">Real-time pollutant values from global OpenAQ database</p>
+</div>
+<div class="sub-feature rounded-xl p-4">
+<h4 class="font-semibold text-gray-800 mb-2">Auto-Updates</h4>
+<p class="text-gray-600 text-sm">Continuous data refresh across all visual and analytical modules</p>
+</div>
+</div>
+</div>
+
+
+</div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-16 px-6 text-center">
+<div class="max-w-4xl mx-auto">
+<div class="glass-card rounded-3xl p-12 fade-in">
+<h2 class="text-3xl md:text-4xl font-bold gradient-text mb-6">
+Ready to Visualize Pollution Like Never Before?
+</h2>
+<p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+Join thousands of users, students, and urban planners who are already using PollutionViz 
+to make informed decisions about air quality and environmental health.
+</p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+<button class="bg-gradient-to-r from-green-400 to-primary text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 btn-hover text-lg font-semibold">
+<i class="ri-download-line mr-2"></i>
+Download App
+</button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 btn-hover text-lg font-semibold hover:bg-primary/10">
+<i class="ri-play-line mr-2"></i>
+Watch Demo
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 px-6 border-t border-white/30 bg-white/10">
+<div class="max-w-6xl mx-auto text-center">
+<div class="flex items-center justify-center space-x-3 mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-earth-line text-green-600 ri-lg"></i>
+</div>
+<span class="logo-text text-lg text-gray-800">PollutionViz</span>
+</div>
+<p class="text-gray-600 text-sm">
+Making invisible pollution visible through advanced AR/VR and AI technology.
+</p>
+<p class="text-gray-500 text-xs mt-2">
+© 2025 PollutionViz. All rights reserved.
+</p>
+</div>
+</footer>
+
+<script>
+// Add scroll-triggered animations
+document.addEventListener('DOMContentLoaded', function() {
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
+});
+}, observerOptions);
+
+// Observe all fade-in elements
+document.querySelectorAll('.fade-in').forEach(el => {
+el.style.opacity = '0';
+el.style.transform = 'translateY(20px)';
+el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+observer.observe(el);
+});
+
+// Add floating animation to feature cards
+document.querySelectorAll('.feature-card').forEach((card, index) => {
+card.style.animationDelay = `${index * 0.2}s`;
+card.classList.add('floating-element');
+});
+});
+</script>
+
+</body>
+</html>
