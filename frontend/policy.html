@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function loadGeoJSON() {
-    fetch('geojson/india_states_full.geojson')
+    fetch('app/geojson/india_states_full.geojson')
       .then(response => response.json())
       .then(data => {
         geojsonLayer = L.geoJSON(data, {
