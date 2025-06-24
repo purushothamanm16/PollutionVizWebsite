@@ -505,6 +505,7 @@ Making invisible pollution visible through advanced AR/VR and AI technology.
   let map;
 let geojsonLayer;
 let selectedState = null;
+  const BASE_URL = "https://pollutionvizwebsite.onrender.com"; // <-- put actual Render URL here
 
 document.addEventListener('DOMContentLoaded', function () {
   const analyzeBtn = document.getElementById('analyzeBtn');
@@ -606,7 +607,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function fetchPollutionData(lat, lon) {
-    fetch(`http://localhost:8000/aqi/aqi?lat=${lat}&lon=${lon}`)
+    fetch(`${BASE_URL}/aqi/aqi?lat=${lat}&lon=${lon}`)
       .then(res => res.json())
       .then(data => {
         const values = {
@@ -731,7 +732,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const query = new URLSearchParams(params).toString();
-    const res = await fetch(`http://localhost:8000/ai/predict_policy?${query}`);
+    const res = await fetch(`${BASE_URL}/ai/predict_policy?${query}`);
     if (!res.ok) throw new Error('Network response was not ok');
     const data = await res.json();
     return data;
